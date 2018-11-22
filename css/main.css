@@ -1,0 +1,51 @@
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.home-outer-layer
+{
+    background-image: url("../img/home-1.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#home
+{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+/*.home-inner-layer
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}*/
+
+.register-box
+{
+	border-color: #0b0b0b;
+	border-style: ridge;
+	padding: 7px;
+}
