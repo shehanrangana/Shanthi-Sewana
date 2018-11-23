@@ -46,7 +46,7 @@
 				</li>
 				<li class="nav-item dropdown">
         <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          For Employers
+          For Customers
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Post a job</a>
