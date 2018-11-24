@@ -10,19 +10,20 @@ class Employee
 {
 
     private $con;
-    public $fname;
-    public $lname;
-    public $address1;
-    public $address2;
-    public $address3;
-    public $gender;
-    public $birthday;
-    public $nic;
-    public $mobile;
+    public $id = " ";
+    public $fname = " ";
+    public $lname = " ";
+    public $address1 = " ";
+    public $address2 = " ";
+    public $address3 = " ";
+    public $gender = " ";
+    public $birthday = " ";
+    public $nic = " ";
+    public $mobile = " ";
     public $password;
-    public $rate;
-    public $type;
-    public $description;
+    public $rate = " ";
+    public $type = " ";
+    public $description = " ";
 
     public function __construct()
     {
@@ -32,12 +33,13 @@ class Employee
     public function AddEmployee()
     {
         $sql = "insert into employee(first_name,last_name,address_line_1,address_line_2,address_line_3
-                  ,gender,birthday,nic,contact_no,rate,password,type,description) values(?,?,?,?,?,?,?,?,?,?,?,?,?);";
+                  ,gender,nic,contact_no,rate,type,description) values(?,?,?,?,?,?,?,?,?,?,?);";
 
         $stmt = $this->con->prepare($sql);
-        $stmt->bind_param("sssssssssssss",$this->fname,$this->lname,
-            $this->address1,$this->address2,$this->address3,$this->gender,$this->birthday,$this->nic,$this->mobile,$this->rate,$this->password
+        $stmt->bind_param("sssssssssss",$this->fname,$this->lname,
+            $this->address1,$this->address2,$this->address3,$this->gender,$this->nic,$this->mobile,$this->rate
         ,$this->type,$this->description);
+        echo $this->mobile." ".$this->nic;
         if($stmt->execute())
         {
             return true;
@@ -51,12 +53,12 @@ class Employee
 
     public function UpdateEmployee($id)
     {
-        $sql = "update employee set first_name=?,last_name=?,address_line_1=?,address_line_2=?,address_line_3=?,gender=?,birthday=?,
+        $sql = "update employee set first_name=?,last_name=?,address_line_1=?,address_line_2=?,address_line_3=?,gender=?,
                 nic=?,contact_no=?,rate=?,type=?,description=? where emp_id=?;";
 
         $stmt=$this->con->prepare($sql);
-        $stmt->bind_param("ssssssssssssss",$this->fname,$this->lname,
-            $this->address1,$this->address2,$this->address3,$this->gender,$this->birthday,$this->nic,$this->mobile,$this->rate,$this->password
+        $stmt->bind_param("ssssssssssss",$this->fname,$this->lname,
+            $this->address1,$this->address2,$this->address3,$this->gender,$this->nic,$this->mobile,$this->rate
             ,$this->type,$this->description,$id);
         if($stmt->execute() && $stmt->affected_rows>0)
         {
@@ -85,7 +87,7 @@ class Employee
 
     public function getEmployee($id)
     {
-        $sql = "select emp_id,first_name,last_name,address_line_1,address_line_2,address_line_3,gender,birthday,nic,contact_no,rate,type,
+        $sql = "select emp_id,first_name,last_name,address_line_1,address_line_2,address_line_3,gender,nic,contact_no,rate,type,
                 description from employee where emp_id=?;";
 
         $stmt = $this->con->prepare($sql);
@@ -133,6 +135,8 @@ class Employee
             return null;
         }
     }
+
+
 
 
 }

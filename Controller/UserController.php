@@ -1,7 +1,8 @@
 <?php
 
-require_once("./Model/Database.php");
-require_once("./Model/User.php");
+require_once("Model/Database.php");
+require_once("Model/User.php");
+require_once("Model/Employee.php");
 
 function login()
 {
@@ -21,18 +22,28 @@ function login()
 function register()
 {
     $user = new User();
+    $emp = new Employee();
     if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         $user->email = testInput($_POST["email"]);
         $user->password = testInput($_POST["password"]);
         $user->type = testInput($_POST["type"]);
-        if($result=$user->register())
+
+        if($result1=$user->register())
         {
-            return true;
+            $emp->id = $user->getUser($_POST["email"]);
+            if($result2=$emp->AddEmployee())
+            {
+                return true;
+            }
+            else
+            {
+                return $result2;
+            }
         }
         else
         {
-            return $result;
+            return $result1;
         }
 
     }

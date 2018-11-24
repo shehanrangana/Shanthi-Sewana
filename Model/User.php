@@ -35,26 +35,29 @@ class User
 
     public function login()
     {
-        $sql = "select email,password,type from users where email=? and password=?;";
+        $sql = "select id,email,password,type from users where email=? and password=?;";
         $stmt = $this->con->prepare($sql);
         $stmt->bind_param("ss",$this->email,$this->password);
         if($stmt->execute())
         {
-            echo $this->email." ".$this->password;
             $stmt->store_result();
 
             if($stmt->num_rows>0)//isset($email))
             {
-                $stmt->bind_result($email,$password,$type);
-                echo "a"." ".$stmt->num_rows." ".$email;
+                $stmt->bind_result($id,$email,$password,$type);
 
                 while($stmt->fetch())
                 {
-                    $_SESSION = array("email"=>$email,"password"=>$password,"type"=>$type);
+                    session_start();
+                    $_SESSION["id"] = $id;
+                    $_SESSION["email"] = $email;
+                    $_SESSION["password"] = $password;
+                    $_SESSION["type"] = $type;
+                    //echo $_SESSION["id"];
                     switch ($type)
                     {
                         case "Admin":echo "<script type='text/javascript'>window.location.href='http://www.exoticdogs.com'</script>";
-                        case "Helper":echo "<script type='text/javascript'>window.location.href='http://www.exoticdogs.com'</script>";
+                        case "Helper":echo "<script type='text/javascript'>window.location.href='./Views/Helper'</script>";
                         case "Employer":echo "<script type='text/javascript'>window.location.href='http://www.exoticdogs.com'</script>";
                     }
 
@@ -62,7 +65,6 @@ class User
             }
             else
             {
-                echo "1";
                 echo $stmt->error." a".$stmt->num_rows." i";
                 return $stmt->error;
             }
@@ -72,5 +74,25 @@ class User
             echo "3";
             return $stmt->error;
         }
+    }
+
+    public function getUser($email)
+    {
+        $sql = "select id from users where email=?;";
+        $stmt = $this->con->prepare($sql);
+        $stmt->bind_param("s",$email);
+        if($stmt->execute())
+        {
+            $stmt->store_result();
+            if($stmt->num_rows>0)
+            {
+                $stmt->bind_param("s",$id);
+                while($stmt->fetch())
+                {
+                    return $id;
+                }
+            }
+        }
+        return false;
     }
 }
