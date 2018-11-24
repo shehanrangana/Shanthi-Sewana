@@ -39,6 +39,7 @@ class Employee
         $stmt->bind_param("sssssssssss",$this->fname,$this->lname,
             $this->address1,$this->address2,$this->address3,$this->gender,$this->nic,$this->mobile,$this->rate
         ,$this->type,$this->description);
+        echo $this->mobile." ".$this->nic;
         if($stmt->execute())
         {
             return true;

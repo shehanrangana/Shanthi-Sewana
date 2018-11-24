@@ -45,15 +45,15 @@ class User
             if($stmt->num_rows>0)//isset($email))
             {
                 $stmt->bind_result($id,$email,$password,$type);
-                echo "a"." ".$stmt->num_rows." ".$email;
 
                 while($stmt->fetch())
                 {
+                    session_start();
                     $_SESSION["id"] = $id;
                     $_SESSION["email"] = $email;
                     $_SESSION["password"] = $password;
                     $_SESSION["type"] = $type;
-                    echo $_SESSION["id"];
+                    //echo $_SESSION["id"];
                     switch ($type)
                     {
                         case "Admin":echo "<script type='text/javascript'>window.location.href='http://www.exoticdogs.com'</script>";

@@ -17,23 +17,19 @@
 </head>
 <body>
 <?php
+require_once("../../logallow.php");
 require_once("../../Controller/EmployeeController.php");
-session_start();
+require_once("../../Controller/JobController.php");
 $result = getEmployee($_SESSION["id"]);
 if($result!=null)
 {
     $result->store_result();
-    /*select emp_id,first_name,last_name,address_line_1,address_line_2,address_line_3,gender,nic,contact_no,rate,type,
-                    description from employee where emp_id=?;";*/
     if($result->num_rows>0)
     {
-        echo $_SESSION["id"]." ".$_SESSION["email"]." ".$_SESSION["type"];
+        //echo $_SESSION["id"]." ".$_SESSION["email"]." ".$_SESSION["type"];
         $result->bind_result($id,$fname,$lname,$address1,$address2,$address3,$gender,$nic,$mobile,$rate,$type,$description);
         while($result->fetch())
         {
-            /*$_SESSION = array("id"=>$_SESSION["id"],"email"=>$_SESSION["email"],"type"=>$_SESSION["type"],"fname"=>$fname,"lname"=>$lname,
-                "address1"=>$address1,"address2"=>$address2,"address3"=>$address3,"gender"=>$gender,"nic"=>$nic,"mobile"=>$mobile,
-                "rate"=>$rate,"Type"=>$type,"description"=>$description);*/
             $_SESSION["fname"] = $fname;
             $_SESSION["lname"] = $lname;
             $_SESSION["address1"] = $address1;
@@ -45,7 +41,7 @@ if($result!=null)
             $_SESSION["rate"] = $rate;
             $_SESSION["Type"] = $type;
             $_SESSION["description"] = $description;
-            echo $_SESSION["id"];
+            //echo $_SESSION["id"];
         }
     }
 }
@@ -62,11 +58,16 @@ if($result!=null)
                 <div class="d-flex flex-column">
                     <div class="p-5 bg-black text-white">
                         <div class="name d-flex flex-row justify-content-between align-items-center">
-                            <h1 class="display-4">John Doe</h1>
+                            <h1 class="display-4">
+                                <?php
+                                    echo $_SESSION['fname']." ".$_SESSION['lname'];
+                                ?>
+                            </h1>
                             <div><i class="fa fa-twitter"></i></div>
                             <div><i class="fa fa-facebook"></i></div>
-                            <div><i class="fa fa-instagram"></i></div>
+                            <div><i class="fa fa"></i><a href="../../logout.php">Logout</a></div>
                             <div><i class="fa fa-github"></i></div>
+
                         </div>
                     </div>
 
@@ -98,12 +99,12 @@ if($result!=null)
     <!-- HOME -->
     <div id="home" class="collapse show">
         <div class="card card-body bg-primary text-white py-5">
-            <h2>Welcome to my page</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, quia.</p>
+            <h2>Previous jobs</h2>
+            <p class="lead"></p>
         </div>
 
         <div class="card card-body py-5">
-            <h3>My Skills</h3>
+            <!--<h3>My Skills</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nulla et, modi harum hic deserunt.</p>
             <hr>
             <h4>HTML</h4>
@@ -126,6 +127,56 @@ if($result!=null)
             <div class="progress mb-3">
                 <div class="progress-bar bg-success" style="width:70%"></div>
             </div>
+            -->
+            <?php
+            $result = getJobs($_SESSION["id"]);
+            //        $sql = "select jobid,description,comment,employee,advertisement from job where employee=?;";
+            if($result)
+                {
+                    $result->bind_result($id,$description,$comment,$employee,$advetisement);
+                    $a = 0;
+                    while($result->fetch())
+                    {
+                        $a = 1;
+                        echo "
+                            <div class='bg-faded' style='border-style: ridge;border-radius: 7px'>
+                            <p>$description</p>
+                            <p><strong>User feedback</strong><br>$comment</p>
+                            </div>
+                        ";
+                    }
+                    if($a==0)
+                    {
+
+
+                        echo "
+                            <div class='bg-light' style='border-style: ridge;border-radius: 7px'>
+                            <p>
+                            <h3 class='text-gray-dark'>Nothing to display</h3>
+                            </p>
+                            </div>
+                        ";
+                    }
+
+                }
+                else
+                {
+
+
+
+                        echo "
+                            <div class='bg-light'>
+                            <p>
+                            <h3 class='text-gray-dark'>Nothing to display</h3>
+                            </p>
+                            </div>
+                        ";
+
+                }
+                ?>
+
+
+
         </div>
     </div>
 
@@ -135,75 +186,83 @@ if($result!=null)
             <h2>My Profile</h2>
             <p></p>
         </div>
-        <div>
+
             <form name="register" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
                 <div class="form-row">
                     <div class="form-group col-md-3">
                         <label for="inputAddress2">NIC</label>
-                        <input type="text" class="form-control" id="inputAddress2" name="nic" pattern="[0-9]{9}[Xx|Vv]" value="<?php echo $_SESSION['nic'];?>" required>
+                        <input type="text" class="form-control" id="inputAddress2" name="nic" value="<?php echo $_SESSION['nic'];?>" required>
                     </div>
                     <div class="col-md-9"></div>
-                    <div class="form-group col-md-5">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
                         <label for="inputEmail4">First Name</label>
-                        <input type="email" class="form-control" id="inputEmail4" name="fname" placeholder="Amal" value="<?php echo $_SESSION['fname'];?>" required>
+                        <input type="text" class="form-control" id="inputEmail4" name="fname" placeholder="Amal" value="<?php echo $_SESSION['fname'];?>" required>
                     </div>
-                    <div class="form-group col-md-5">
+                    <div class="form-group col-md-3">
                         <label for="inputEmail4">Last Name</label>
-                        <input type="email" class="form-control" id="inputEmail4" name="lname" placeholder="Karunacena" value="<?php echo $_SESSION['lname'];?>" required>
+                        <input type="text" class="form-control" id="inputEmail4" name="lname" placeholder="Karunacena" value="<?php echo $_SESSION['lname'];?>" required>
                     </div>
-                    <div class="form-group col-md-6">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
                         <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email" value="<?php echo $_SESSION['email'];?>" required>
+                        <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$" value="<?php echo $_SESSION['email'];?>" required>
                     </div>
-                    <div class="form-group col-md-5">
+                    <div class="form-group col-md-3">
                         <label for="inputAddress2">Mobile No.</label>
                         <input type="text" class="form-control" id="inputAddress2" name="mobile" pattern="[0-9]{10}" value="<?php echo $_SESSION['mobile'];?>">
                     </div>
-
                 </div>
-
-
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-3">
                         <label for="inputAddress">Address</label>
                         <input type="text" class="form-control" id="inputAddress" name="address" placeholder="1234 Main St" required value="<?php echo $_SESSION['address1'];?>">
                     </div>
-                    <div class="form-group col-md-5">
+                    <div class="form-group col-md-3">
                         <label for="inputCity">City</label>
                         <input type="text" class="form-control" id="inputCity" name="city" required value="<?php echo $_SESSION['address2'];?>">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <label for="inputState">District</label>
                         <select id="inputState" class="form-control" name="district" value="<?php echo $_SESSION['address3'];?>">
                             <option selected>Choose...</option>
                             <option>...</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-4">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
                         <label for="inputState">Gender</label>
                         <select id="inputState" class="form-control" name="gender" value="<?php echo $_SESSION['gender'];?>">
                             <option selected>Male</option>
                             <option>Female</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         <label for="inputZip">Rate</label>
                         <input type="text" class="form-control" id="inputZip" name="rate" value="<?php echo $_SESSION['rate'];?>">
                     </div>
-                    <div class="form-group col-md-2">
-                        <label for="inputZip">Type</label>
-                        <input type="text" class="form-control" id="inputZip" name="type">
-                    </div>
-
-                    <div class="form-group col-md-7">
-                        <label for="inputZip">Discription</label>
-                        <textarea class="form-control" id="inputZip" name="discription" placeholder="Write about you. This will be displayed to your employer's. Your attitude, and other things." value="1"></textarea>
+                    <div class="form-group col-md-3">
+                        <label for="inputState">Service  : <strong><?php echo $_SESSION["Type"]; ?></strong></label>
+                        <select id="inputState" class="form-control" name="type">
+                            <option selected>Male</option>
+                            <option>Female</option>
+                        </select>
                     </div>
                 </div>
+<div class="form-row">
+                    <div class="form-group col-md-7">
+                        <label for="inputZip">Description</label>
+                        <textarea class="form-control" id="inputZip" name="description" placeholder="Write about you. This will be displayed to your employer's. Your attitude, and other things."><?php echo $_SESSION["description"];?></textarea>
 
+                    </div>
+                </div>
+            </form>
                 <input type="submit" class="ml-3 btn btn-primary" name="submit" value="Save Changes"><input type="reset" class="ml-3 btn btn-primary" value="Cancel">
             </form>
-        </div>
+
 
     </div>
 
@@ -343,7 +402,7 @@ if(isset($_POST["submit"]))
     }
     else
     {
-        echo "<script type='text/javascript'>alert($result)</script>";
+        echo "<script type='text/javascript'>alert('Unsuccess')</script>";
 
     }
 }

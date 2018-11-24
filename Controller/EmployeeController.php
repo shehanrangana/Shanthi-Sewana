@@ -8,6 +8,7 @@ function UpdateEmployee()
     if($_SERVER["REQUEST_METHOD"]=="POST")
     {
         $emp = new Employee();
+        $emp->nic = $_POST["nic"];
         $emp->fname = $_POST["fname"];
         $emp->lname = $_POST["lname"];
         $emp->email = $_SESSION["email"];
@@ -18,7 +19,7 @@ function UpdateEmployee()
         $emp->gender = $_POST["gender"];
         $emp->rate = $_POST["rate"];
         $emp->type = $_POST["type"];
-        $emp->description = $_POST["discription"];
+        $emp->description = $_POST["description"];
         $result = $emp->UpdateEmployee($_SESSION["id"]);
         if($result)
         {
