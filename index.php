@@ -30,7 +30,7 @@
 </head>
 
 <body id="page-top">
-
+<?php session_start();?>
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
 	<div class="container">
