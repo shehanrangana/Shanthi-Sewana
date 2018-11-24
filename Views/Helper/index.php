@@ -20,6 +20,7 @@
 require_once("../../logallow.php");
 require_once("../../Controller/EmployeeController.php");
 require_once("../../Controller/JobController.php");
+require_once("../../Controller/OrderController.php");
 $result = getEmployee($_SESSION["id"]);
 if($result!=null)
 {
@@ -27,7 +28,7 @@ if($result!=null)
     if($result->num_rows>0)
     {
         //echo $_SESSION["id"]." ".$_SESSION["email"]." ".$_SESSION["type"];
-        $result->bind_result($id,$fname,$lname,$address1,$address2,$address3,$gender,$nic,$mobile,$rate,$type,$description);
+        $result->bind_result($id,$fname,$lname,$address1,$address2,$address3,$gender,$nic,$mobile,$rate,$type,$description,$location);
         while($result->fetch())
         {
             $_SESSION["fname"] = $fname;
@@ -41,6 +42,8 @@ if($result!=null)
             $_SESSION["rate"] = $rate;
             $_SESSION["Type"] = $type;
             $_SESSION["description"] = $description;
+            $_SESSION["location"] = $location;
+            //echo $_SESSION["location"]."111";
             //echo $_SESSION["id"];
         }
     }
@@ -52,8 +55,11 @@ if($result!=null)
     <header id="main-header">
         <div class="row no-gutters">
             <div class="col-lg-4 col-md-5">
-                <img src="../../img/person1.jpg">
+                <!--<img src="../../img/person1.jpg">-->
+                <img src="<?php echo $_SESSION['location']?>" width="100%" height="100%">
+
             </div>
+
             <div class="col-lg-8 col-md-7">
                 <div class="d-flex flex-column">
                     <div class="p-5 bg-black text-white">
@@ -63,6 +69,7 @@ if($result!=null)
                                     echo $_SESSION['fname']." ".$_SESSION['lname'];
                                 ?>
                             </h1>
+
                             <div><i class="fa fa-twitter"></i></div>
                             <div><i class="fa fa-facebook"></i></div>
                             <div><i class="fa fa"></i><a href="../../logout.php">Logout</a></div>
@@ -72,7 +79,6 @@ if($result!=null)
                     </div>
 
                     <div class="p-4 bg-black">
-                        Experienced Full Stack Web Developer
                     </div>
 
                     <div>
@@ -184,7 +190,14 @@ if($result!=null)
     <div id="resume" class="collapse">
         <div class="card card-body bg-success text-white py-5">
             <h2>My Profile</h2>
-            <p></p>
+            <div align="right">
+                <h5 align="right" class="mr-3">Upload a profile picture</h5>
+            <form name="propic" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="" value="300000000">
+                <input type="file" name="upload" value="" title="Upload your profile picture">
+                <input type="submit" name="upload" value="Upload">
+            </form>
+            </div>
         </div>
 
             <form name="register" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
@@ -259,7 +272,7 @@ if($result!=null)
 
                     </div>
                 </div>
-            </form>
+
                 <input type="submit" class="ml-3 btn btn-primary" name="submit" value="Save Changes"><input type="reset" class="ml-3 btn btn-primary" value="Cancel">
             </form>
 
@@ -269,58 +282,67 @@ if($result!=null)
     <!-- WORK -->
     <div id="work" class="collapse">
         <div class="card card-body bg-warning py-5">
-            <h3>My Portfolio</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, adipisci?</p>
+            <h3>Orders</h3>
+            <p></p>
         </div>
 
         <div class="card card-body py-5">
-            <h3>What have I built?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, eum.</p>
+            <h3></h3>
+            <p></p>
             <div class="row no-gutters">
-                <div class="col-md-3">
-                    <a href="https://unsplash.it/1200/768.jpg?image=251" data-toggle="lightbox">
-                        <img src="https://unsplash.it/600.jpg?image=251" alt="" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="https://unsplash.it/1200/768.jpg?image=252" data-toggle="lightbox">
-                        <img src="https://unsplash.it/600.jpg?image=252" alt="" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="https://unsplash.it/1200/768.jpg?image=253" data-toggle="lightbox">
-                        <img src="https://unsplash.it/600.jpg?image=253" alt="" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="https://unsplash.it/1200/768.jpg?image=254" data-toggle="lightbox">
-                        <img src="https://unsplash.it/600.jpg?image=254" alt="" class="img-fluid">
-                    </a>
-                </div>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Expect Date</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Employer</th>
+                        <th scope="col">Contact</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        /*$result = getOrders($_SESSION["id"]);
+                        if($result!=null)
+                            {
+                                //$sql = "select id,description,address,city,district,category,created_date,expect_date,amount,employee,employer,contact,status from order where employee=? and status=0;";
+
+                                $result->bind_result($id,$description,$address,$city,$district,$category,$createDate,$expectDate,$amount,$employee,$employer,
+                                $contact,$status);
+                                while($result->fetch())
+                                {
+                                    echo "<tr scope='row'><td>$id</td><td>$expectDate</td><td>$category</td><td>$address.','.$city.','.$district</td><td>$employer</td><td>$contact</td><td>$amount</td></tr>"."<button class='btn btn-primary'>Accept</button>"."<button class='btn btn-primary'>Reject</button>";
+                                }
+                            }*/
+                            ?>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <div class="row no-gutters">
-                <div class="col-md-3">
-                    <a href="https://unsplash.it/1200/768.jpg?image=255" data-toggle="lightbox">
-                        <img src="https://unsplash.it/600.jpg?image=255" alt="" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="https://unsplash.it/1200/768.jpg?image=256" data-toggle="lightbox">
-                        <img src="https://unsplash.it/600.jpg?image=256" alt="" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="https://unsplash.it/1200/768.jpg?image=257" data-toggle="lightbox">
-                        <img src="https://unsplash.it/600.jpg?image=257" alt="" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-md-3">
-                    <a href="https://unsplash.it/1200/768.jpg?image=258" data-toggle="lightbox">
-                        <img src="https://unsplash.it/600.jpg?image=258" alt="" class="img-fluid">
-                    </a>
-                </div>
-            </div>
+
         </div>
     </div>
 
@@ -391,14 +413,27 @@ if($result!=null)
 </body>
 </html>
 <?php
-require_once("../../Controller/EmployeeController.php");
 
 if(isset($_POST["submit"]))
 {
     $result = UpdateEmployee();
     if($result)
     {
-        echo "<script type='text/javascript'>alert('Profile updated successfully')</script>";
+        echo "<script type='text/javascript'>alert('Profile updated successfully');window.location=window.location;</script>";
+    }
+    else
+    {
+        echo "<script type='text/javascript'>alert('Unsuccess')</script>";
+
+    }
+}
+
+if(isset($_POST["upload"]))
+{
+    $result = uploadPicture();
+    if($result)
+    {
+        echo "<script type='text/javascript'>alert('Profile picture uploaded successfully');window.location = window.location</script>";
     }
     else
     {
