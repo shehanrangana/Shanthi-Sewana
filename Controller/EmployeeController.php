@@ -38,3 +38,34 @@ function getEmployee($id)
     $emp = new Employee();
     return $emp->getEmployee($id);
 }
+
+function uploadPicture()
+{
+    $emp = new Employee();
+    $fileLocation = "../../img/profile/".$_FILES['upload']['name'];
+    switch($_FILES['upload']['type'])
+    {
+        case "image/jpeg":$a=1;break;
+        case "image/png":$a=1;break;
+    }
+    if($_FILES["upload"]["error"]==0 && $a==1)
+    {
+        if(move_uploaded_file($_FILES['upload']['tmp_name'],$fileLocation))
+        {
+            if($emp->photoUpload($_SESSION['id'],$fileLocation))
+            {
+                $_SESSION['location'] = $fileLocation;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+    }
+    else
+    {
+        return false;
+    }
+}

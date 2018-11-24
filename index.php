@@ -49,7 +49,7 @@
           For Employers
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Post a job</a>
+          <a class="dropdown-item" href="./register.php">Post a job</a>
           <a class="dropdown-item" href="#">Find a candidate</a>
           
         </div>
@@ -61,7 +61,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Domestic helper jobs</a>
-          <a class="dropdown-item" href="#">Submit your profile</a>
+          <a class="dropdown-item" href="./register.php">Submit your profile</a>
           
         </div>
 	  </li>

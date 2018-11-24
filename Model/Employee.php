@@ -24,6 +24,7 @@ class Employee
     public $rate = " ";
     public $type = " ";
     public $description = " ";
+    public $location = " ";
 
     public function __construct()
     {
@@ -39,7 +40,6 @@ class Employee
         $stmt->bind_param("sssssssssss",$this->fname,$this->lname,
             $this->address1,$this->address2,$this->address3,$this->gender,$this->nic,$this->mobile,$this->rate
         ,$this->type,$this->description);
-        echo $this->mobile." ".$this->nic;
         if($stmt->execute())
         {
             return true;
@@ -88,7 +88,7 @@ class Employee
     public function getEmployee($id)
     {
         $sql = "select emp_id,first_name,last_name,address_line_1,address_line_2,address_line_3,gender,nic,contact_no,rate,type,
-                description from employee where emp_id=?;";
+                description ,propic from employee where emp_id=?;";
 
         $stmt = $this->con->prepare($sql);
         $stmt->bind_param("s",$id);
@@ -133,6 +133,21 @@ class Employee
         else
         {
             return null;
+        }
+    }
+
+    public function photoUpload($id,$location)
+    {
+        $sql = "update employee set propic=? where emp_id=?;";
+        $stmt = $this->con->prepare($sql);
+        $stmt->bind_param("ss",$location,$id);
+        if($stmt->execute())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
