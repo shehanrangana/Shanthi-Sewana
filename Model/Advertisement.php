@@ -1,31 +1,61 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: dulee
- * Date: 11/24/2018
- * Time: 11:18 AM
- */
 
 class Advertisement
 {
-    public $id;
-    public $customer;
+    private $con;
+    public $title;
+    public $region;
+    public $j_type; 
+    public $position;
+    public $skills;
+    public $telephone;
+    public $email;
     public $address1;
     public $address2;
-    public $address3;
-    public $category;
+    public $city;
+    public $start_date;
+    public $end_date;
     public $description;
-    public $createDate;
-    public $expectDate;
-    public $amount;
-    public $offer;  // 0 if an offer    1 if an advertisement
-    public $price;
-    public $con;
+   
 
-    public function __construct()
+   public function __construct()
     {
         $this->con = (new Database())->getConnection();
     }
 
 
+ public function AddAdvertisement()
+    {
+    try{
+        $sql = "INSERT INTO advertisement(title, region, j_type, position, skills, telephone,email,address1,address2,city,start_date,end_date,description) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
+        $stmt = $this->con->prepare($sql);
+
+        $stmt->bind_param("sssssssssssss",$this->title,$this->region,
+            $this->j_type,$this->position,$this->skills,$this->telephone,$this->email,$this->address1
+            ,$this->address2,$this->city,$this->start_date,$this->end_date,$this->description);
+        
+        if($stmt->execute())
+        {
+            header("Location: create.php?status=created");
+            exit();
+        }
+        else
+        {
+            header("Location: create.php?status=fail_create");
+            return $stmt->error;
+            exit();
+            }
+        }
+        catch (Exception $e) {
+        echo "Error " . $e->getMessage();
+        exit();
+        
+        
+      }
+
+    }
+
 }
+
+?>
