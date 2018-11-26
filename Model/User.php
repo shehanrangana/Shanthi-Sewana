@@ -56,7 +56,7 @@ class User
                     //echo $_SESSION["id"];
                     switch ($type)
                     {
-                        case "Admin":echo "<script type='text/javascript'>window.location.href='http://www.exoticdogs.com'</script>";
+                        case "Admin":echo "<script type='text/javascript'>window.location.href='./Views/Admin'</script>";
                         case "Helper":echo "<script type='text/javascript'>window.location.href='./Views/Helper'</script>";
                         case "Employer":echo "<script type='text/javascript'>window.location.href='http://www.exoticdogs.com'</script>";
                     }

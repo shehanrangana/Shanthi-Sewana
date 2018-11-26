@@ -973,6 +973,12 @@
     <table id="246" parent="7" name="customer_message"/>
     <table id="247" parent="7" name="employee"/>
     <table id="248" parent="7" name="employee_message"/>
+<<<<<<< HEAD
+    <table id="249" parent="7" name="payment"/>
+    <table id="250" parent="7" name="request"/>
+    <table id="251" parent="7" name="users"/>
+    <column id="252" parent="243" name="email">
+=======
     <table id="249" parent="7" name="job"/>
     <table id="250" parent="7" name="order"/>
     <table id="251" parent="7" name="payment"/>
@@ -980,102 +986,170 @@
     <table id="253" parent="7" name="service"/>
     <table id="254" parent="7" name="users"/>
     <column id="255" parent="243" name="email">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>1</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="253" parent="243" name="password">
+=======
     <column id="256" parent="243" name="password">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>2</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="254" parent="243" name="first_name">
+=======
     <column id="257" parent="243" name="first_name">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="255" parent="243" name="last_name">
+=======
     <column id="258" parent="243" name="last_name">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>4</Position>
       <DataType>varchar(60)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="256" parent="243" name="contact_no">
+=======
     <column id="259" parent="243" name="contact_no">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>5</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="257" parent="243" name="id">
+=======
     <column id="260" parent="243" name="id">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <key id="258" parent="243" name="PRIMARY">
+=======
     <key id="261" parent="243" name="PRIMARY">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+<<<<<<< HEAD
+    <column id="259" parent="244" name="ad_no">
+=======
     <column id="262" parent="244" name="ad_no">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="260" parent="244" name="customer_id">
+=======
     <column id="263" parent="244" name="customer_id">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="261" parent="244" name="address_line_1">
+=======
     <column id="264" parent="244" name="address_line_1">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="262" parent="244" name="address_line_2">
+=======
     <column id="265" parent="244" name="address_line_2">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>4</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="263" parent="244" name="address_line_3">
+=======
     <column id="266" parent="244" name="address_line_3">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>5</Position>
       <DataType>varchar(60)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="264" parent="244" name="category">
+=======
     <column id="267" parent="244" name="category">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>6</Position>
       <DataType>varchar(25)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="265" parent="244" name="description">
+=======
     <column id="268" parent="244" name="description">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="266" parent="244" name="created_date">
+=======
     <column id="269" parent="244" name="created_date">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>8</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="267" parent="244" name="expecting_date">
+=======
     <column id="270" parent="244" name="expecting_date">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>9</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <index id="268" parent="244" name="customer_id">
+      <ColNames>customer_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="269" parent="244" name="PRIMARY">
+=======
     <column id="271" parent="244" name="amount">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
@@ -1096,142 +1170,256 @@
       <Type>btree</Type>
     </index>
     <key id="275" parent="244" name="PRIMARY">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ad_no</ColNames>
       <Primary>1</Primary>
     </key>
+<<<<<<< HEAD
+    <foreign-key id="270" parent="244" name="advertisement_ibfk_1">
+=======
     <foreign-key id="276" parent="244" name="advertisement_ibfk_1">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <ColNames>customer_id</ColNames>
       <RefSchemaName>shanthi-sewana</RefSchemaName>
       <RefTableName>customer</RefTableName>
       <RefColNames>customer_id</RefColNames>
     </foreign-key>
+<<<<<<< HEAD
+    <column id="271" parent="245" name="customer_id">
+=======
     <column id="277" parent="245" name="customer_id">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="272" parent="245" name="password">
+=======
     <column id="278" parent="245" name="password">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>2</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="273" parent="245" name="first_name">
+=======
     <column id="279" parent="245" name="first_name">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="274" parent="245" name="last_name">
+=======
     <column id="280" parent="245" name="last_name">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>4</Position>
       <DataType>varchar(80)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="275" parent="245" name="address_line_1">
+=======
     <column id="281" parent="245" name="address_line_1">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>5</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="276" parent="245" name="address_line_2">
+=======
     <column id="282" parent="245" name="address_line_2">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>6</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="277" parent="245" name="address_line_3">
+=======
     <column id="283" parent="245" name="address_line_3">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>7</Position>
       <DataType>varchar(60)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="278" parent="245" name="nic">
+=======
     <column id="284" parent="245" name="nic">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>8</Position>
       <DataType>varchar(12)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="279" parent="245" name="contact_no">
+=======
     <column id="285" parent="245" name="contact_no">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>9</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="280" parent="245" name="email">
+=======
     <column id="286" parent="245" name="email">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <index id="281" parent="245" name="customer_username_uindex">
+=======
     <index id="287" parent="245" name="customer_username_uindex">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
+<<<<<<< HEAD
+    <key id="282" parent="245" name="PRIMARY">
+=======
     <key id="288" parent="245" name="PRIMARY">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <NameSurrogate>1</NameSurrogate>
       <ColNames>customer_id</ColNames>
       <Primary>1</Primary>
     </key>
+<<<<<<< HEAD
+    <key id="283" parent="245" name="customer_username_uindex">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>customer_username_uindex</UnderlyingIndexName>
+    </key>
+    <column id="284" parent="246" name="message_no">
+=======
     <key id="289" parent="245" name="customer_username_uindex">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>customer_username_uindex</UnderlyingIndexName>
     </key>
     <column id="290" parent="246" name="message_no">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="285" parent="246" name="customer_id">
+=======
     <column id="291" parent="246" name="customer_id">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="286" parent="246" name="message">
+=======
     <column id="292" parent="246" name="message">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="287" parent="246" name="fee">
+=======
     <column id="293" parent="246" name="fee">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>4</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="288" parent="246" name="date">
+=======
     <column id="294" parent="246" name="date">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>5</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <index id="289" parent="246" name="customer_id">
+      <ColNames>customer_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="290" parent="246" name="PRIMARY">
+=======
     <index id="295" parent="246" name="customer_id">
       <ColNames>customer_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="296" parent="246" name="PRIMARY">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <NameSurrogate>1</NameSurrogate>
       <ColNames>message_no</ColNames>
       <Primary>1</Primary>
     </key>
+<<<<<<< HEAD
+    <foreign-key id="291" parent="246" name="customer_message_ibfk_1">
+=======
     <foreign-key id="297" parent="246" name="customer_message_ibfk_1">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <ColNames>customer_id</ColNames>
       <RefSchemaName>shanthi-sewana</RefSchemaName>
       <RefTableName>customer</RefTableName>
       <RefColNames>customer_id</RefColNames>
     </foreign-key>
+<<<<<<< HEAD
+    <column id="292" parent="247" name="emp_id">
+=======
     <column id="298" parent="247" name="emp_id">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="293" parent="247" name="password">
+      <Position>2</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="294" parent="247" name="first_name">
+      <Position>3</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="295" parent="247" name="last_name">
+      <Position>4</Position>
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="296" parent="247" name="address_line_1">
+=======
     <column id="299" parent="247" name="first_name">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
@@ -1251,11 +1439,33 @@
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="302" parent="247" name="address_line_2">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>5</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="297" parent="247" name="address_line_2">
+      <Position>6</Position>
+      <DataType>varchar(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="298" parent="247" name="address_line_3">
+      <Position>7</Position>
+      <DataType>varchar(60)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="299" parent="247" name="gender">
+      <Position>8</Position>
+      <DataType>varchar(6)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="300" parent="247" name="birthday">
+=======
     <column id="303" parent="247" name="address_line_3">
       <Position>6</Position>
       <DataType>varchar(60)|0s</DataType>
@@ -1275,11 +1485,43 @@
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="306" parent="247" name="contact_no">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
       <Position>9</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
+    <column id="301" parent="247" name="nic">
+      <Position>10</Position>
+      <DataType>varchar(12)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="302" parent="247" name="contact_no">
+      <Position>11</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="303" parent="247" name="rate">
+      <Position>12</Position>
+      <DataType>double|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="304" parent="247" name="type">
+      <Position>13</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="305" parent="247" name="description">
+      <Position>14</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="306" parent="247" name="PRIMARY">
+=======
     <column id="307" parent="247" name="rate">
       <Position>10</Position>
       <DataType>double|0s</DataType>
@@ -1301,57 +1543,131 @@
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="311" parent="247" name="propic">
       <Position>14</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="312" parent="247" name="PRIMARY">
+=======
+    <key id="311" parent="247" name="PRIMARY">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <NameSurrogate>1</NameSurrogate>
       <ColNames>emp_id</ColNames>
       <Primary>1</Primary>
     </key>
+<<<<<<< HEAD
     <column id="313" parent="248" name="message_no">
+=======
+<<<<<<< HEAD
+    <column id="307" parent="248" name="message_no">
+=======
+    <column id="312" parent="248" name="message_no">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="314" parent="248" name="emp_id">
+=======
+<<<<<<< HEAD
+    <column id="308" parent="248" name="emp_id">
+=======
+    <column id="313" parent="248" name="emp_id">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="315" parent="248" name="message">
+=======
+<<<<<<< HEAD
+    <column id="309" parent="248" name="message">
+=======
+    <column id="314" parent="248" name="message">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="316" parent="248" name="date">
+=======
+<<<<<<< HEAD
+    <column id="310" parent="248" name="date">
+=======
+    <column id="315" parent="248" name="date">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>4</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <index id="317" parent="248" name="emp_id">
       <ColNames>emp_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="318" parent="248" name="PRIMARY">
+=======
+<<<<<<< HEAD
+    <index id="311" parent="248" name="emp_id">
+      <ColNames>emp_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="312" parent="248" name="PRIMARY">
+=======
+    <index id="316" parent="248" name="emp_id">
+      <ColNames>emp_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="317" parent="248" name="PRIMARY">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <NameSurrogate>1</NameSurrogate>
       <ColNames>message_no</ColNames>
       <Primary>1</Primary>
     </key>
+<<<<<<< HEAD
     <foreign-key id="319" parent="248" name="employee_message_ibfk_1">
+=======
+<<<<<<< HEAD
+    <foreign-key id="313" parent="248" name="employee_message_ibfk_1">
+=======
+    <foreign-key id="318" parent="248" name="employee_message_ibfk_1">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <ColNames>emp_id</ColNames>
       <RefSchemaName>shanthi-sewana</RefSchemaName>
       <RefTableName>employee</RefTableName>
       <RefColNames>emp_id</RefColNames>
     </foreign-key>
+<<<<<<< HEAD
     <column id="320" parent="249" name="jobid">
+=======
+<<<<<<< HEAD
+    <column id="314" parent="249" name="message_no">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="315" parent="249" name="customer_id">
+=======
+    <column id="319" parent="249" name="jobid">
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1510,83 +1826,199 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="350" parent="251" name="customer_id">
+=======
+    <column id="341" parent="251" name="customer_id">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="351" parent="251" name="amount">
+=======
+<<<<<<< HEAD
+    <column id="316" parent="249" name="amount">
+=======
+    <column id="342" parent="251" name="amount">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>3</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="352" parent="251" name="date">
+=======
+<<<<<<< HEAD
+    <column id="317" parent="249" name="date">
+=======
+    <column id="343" parent="251" name="date">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>4</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <index id="353" parent="251" name="customer_id">
       <ColNames>customer_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="354" parent="251" name="PRIMARY">
+=======
+<<<<<<< HEAD
+    <index id="318" parent="249" name="customer_id">
+      <ColNames>customer_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="319" parent="249" name="PRIMARY">
+=======
+    <index id="344" parent="251" name="customer_id">
+      <ColNames>customer_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="345" parent="251" name="PRIMARY">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <NameSurrogate>1</NameSurrogate>
       <ColNames>message_no</ColNames>
       <Primary>1</Primary>
     </key>
+<<<<<<< HEAD
     <foreign-key id="355" parent="251" name="payment_ibfk_1">
+=======
+<<<<<<< HEAD
+    <foreign-key id="320" parent="249" name="payment_ibfk_1">
+=======
+    <foreign-key id="346" parent="251" name="payment_ibfk_1">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <ColNames>message_no</ColNames>
       <RefSchemaName>shanthi-sewana</RefSchemaName>
       <RefTableName>customer_message</RefTableName>
       <RefColNames>message_no</RefColNames>
     </foreign-key>
+<<<<<<< HEAD
     <foreign-key id="356" parent="251" name="payment_ibfk_2">
+=======
+<<<<<<< HEAD
+    <foreign-key id="321" parent="249" name="payment_ibfk_2">
+=======
+    <foreign-key id="347" parent="251" name="payment_ibfk_2">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <ColNames>customer_id</ColNames>
       <RefSchemaName>shanthi-sewana</RefSchemaName>
       <RefTableName>customer_message</RefTableName>
       <RefColNames>customer_id</RefColNames>
     </foreign-key>
+<<<<<<< HEAD
     <column id="357" parent="252" name="request_no">
+=======
+<<<<<<< HEAD
+    <column id="322" parent="250" name="request_no">
+=======
+    <column id="348" parent="252" name="request_no">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="358" parent="252" name="customer_id">
+=======
+<<<<<<< HEAD
+    <column id="323" parent="250" name="customer_id">
+=======
+    <column id="349" parent="252" name="customer_id">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="359" parent="252" name="emp_id">
+=======
+<<<<<<< HEAD
+    <column id="324" parent="250" name="emp_id">
+=======
+    <column id="350" parent="252" name="emp_id">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="360" parent="252" name="description">
+=======
+<<<<<<< HEAD
+    <column id="325" parent="250" name="description">
+=======
+    <column id="351" parent="252" name="description">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="361" parent="252" name="created_date">
+=======
+<<<<<<< HEAD
+    <column id="326" parent="250" name="created_date">
+=======
+    <column id="352" parent="252" name="created_date">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>5</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="362" parent="252" name="expecting_date">
+=======
+<<<<<<< HEAD
+    <column id="327" parent="250" name="expecting_date">
+=======
+    <column id="353" parent="252" name="expecting_date">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>6</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <index id="363" parent="252" name="customer_id">
+=======
+<<<<<<< HEAD
+    <index id="328" parent="250" name="customer_id">
+      <ColNames>customer_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="329" parent="250" name="emp_id">
+      <ColNames>emp_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="330" parent="250" name="PRIMARY">
+=======
+    <index id="354" parent="252" name="customer_id">
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <ColNames>customer_id</ColNames>
       <Type>btree</Type>
     </index>
@@ -1594,24 +2026,52 @@
       <ColNames>emp_id</ColNames>
       <Type>btree</Type>
     </index>
+<<<<<<< HEAD
     <key id="365" parent="252" name="PRIMARY">
+=======
+    <key id="356" parent="252" name="PRIMARY">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <NameSurrogate>1</NameSurrogate>
       <ColNames>request_no</ColNames>
       <Primary>1</Primary>
     </key>
+<<<<<<< HEAD
     <foreign-key id="366" parent="252" name="request_ibfk_1">
+=======
+<<<<<<< HEAD
+    <foreign-key id="331" parent="250" name="request_ibfk_1">
+=======
+    <foreign-key id="357" parent="252" name="request_ibfk_1">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <ColNames>customer_id</ColNames>
       <RefSchemaName>shanthi-sewana</RefSchemaName>
       <RefTableName>customer</RefTableName>
       <RefColNames>customer_id</RefColNames>
     </foreign-key>
+<<<<<<< HEAD
     <foreign-key id="367" parent="252" name="request_ibfk_2">
+=======
+<<<<<<< HEAD
+    <foreign-key id="332" parent="250" name="request_ibfk_2">
+=======
+    <foreign-key id="358" parent="252" name="request_ibfk_2">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <ColNames>emp_id</ColNames>
       <RefSchemaName>shanthi-sewana</RefSchemaName>
       <RefTableName>employee</RefTableName>
       <RefColNames>emp_id</RefColNames>
     </foreign-key>
+<<<<<<< HEAD
     <column id="368" parent="253" name="id">
+=======
+<<<<<<< HEAD
+    <column id="333" parent="251" name="email">
+=======
+    <column id="359" parent="253" name="id">
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1629,42 +2089,95 @@
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+<<<<<<< HEAD
     <column id="371" parent="254" name="email">
+=======
+    <column id="362" parent="254" name="email">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="372" parent="254" name="password">
+=======
+<<<<<<< HEAD
+    <column id="334" parent="251" name="password">
+=======
+    <column id="363" parent="254" name="password">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="373" parent="254" name="id">
+=======
+<<<<<<< HEAD
+    <column id="335" parent="251" name="id">
+=======
+    <column id="364" parent="254" name="id">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <column id="374" parent="254" name="type">
+=======
+<<<<<<< HEAD
+    <column id="336" parent="251" name="type">
+=======
+    <column id="365" parent="254" name="type">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
+<<<<<<< HEAD
     <index id="375" parent="254" name="users_email_uindex">
+=======
+<<<<<<< HEAD
+    <index id="337" parent="251" name="users_email_uindex">
+=======
+    <index id="366" parent="254" name="users_email_uindex">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
+<<<<<<< HEAD
     <key id="376" parent="254" name="PRIMARY">
+=======
+<<<<<<< HEAD
+    <key id="338" parent="251" name="PRIMARY">
+=======
+    <key id="367" parent="254" name="PRIMARY">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+<<<<<<< HEAD
     <key id="377" parent="254" name="users_email_uindex">
+=======
+<<<<<<< HEAD
+    <key id="339" parent="251" name="users_email_uindex">
+=======
+    <key id="368" parent="254" name="users_email_uindex">
+>>>>>>> 9031f2c146daac51bcd5309172b68bbf27ae6f5d
+>>>>>>> 43f4d04507aca7827f717de886684e8309c98692
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_uindex</UnderlyingIndexName>
     </key>
