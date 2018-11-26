@@ -27,5 +27,28 @@ class Advertisement
         $this->con = (new Database())->getConnection();
     }
 
+    public function viewAdvertisement()
+    {
+        $sql = "SELECT * 
+        FROM advertisement;";
+        $stmt = $this->con->prepare($sql);
+        if($stmt->execute())
+        {
+            $stmt->store_result();
+            if($stmt->num_rows>0)
+            {
+                return $stmt;
+            }
+            else
+            {
+                return null;
+            }
 
+        }
+        else
+        {
+            return null;
+        }
+
+    }
 }
