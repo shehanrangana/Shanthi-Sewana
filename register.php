@@ -24,6 +24,7 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
+    <link href="css/sweetalert2.min.css" rel="stylesheet">
     <link href="css/freelancer.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 
@@ -183,6 +184,7 @@
             </div>
         </div>
             <div class="col-md-4">
+
             <div style="width:250px;border-style:ridge;border-radius:7px;margin-top:7px">
                 <h5>Have an acoount then Login...</h5>
                 <button type="button" class="btn btn-primary ml-3 mt-3 mb-1 py-1 px-0 px-lg-3" data-toggle="modal" data-target="#employeeLogin">
@@ -234,6 +236,7 @@
 <script src="./vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
 <!-- Contact Form JavaScript -->
+<script src="./js/sweetalert2.js"></script>
 <script src="./js/jqBootstrapValidation.js"></script>
 <script src="./js/contact_me.js"></script>
 
@@ -258,7 +261,12 @@ if(isset($_POST['submit']))
 
         if(register())
         {
-            echo "<script type='text/javascript'>alert('Successfully registered')</script>";
+            echo "<script type='text/javascript'>swal({
+  title: 'Successfully registered',
+  text: '',
+  type: 'success',
+  confirmButtonText: 'Ok'
+})</script>";
         }
         else
         {
@@ -272,7 +280,13 @@ if(isset($_POST['login']))
 {
     if(strlen(trim($_POST["password"]))<7)
     {
-        "<script type='text/javascript'>alert('Password field must be 7 characters or more')</script>";
+        echo "<script type='text/javascript'>swal({
+  title: 'Password must be 7 characters or more!',
+  text: 'Do you want to continue',
+  type: 'error',
+  confirmButtonText: 'Try again'
+})</script>";
+        //"<script type='text/javascript'>alert('Password field must be 7 characters or more')</script>";
     }
     else
     {

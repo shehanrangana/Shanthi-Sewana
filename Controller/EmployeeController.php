@@ -1,6 +1,17 @@
 <?php
-require_once("../../Model/Database.php");
-require_once("../../Model/Employee.php");
+if(file_exists("../../Model/Database.php"))
+{
+    require_once("../../Model/Database.php");
+    require_once("../../Model/Employee.php");
+}
+
+if(file_exists("./Model/Database.php"))
+{
+    require_once("./Model/Database.php");
+    require_once("./Model/Employee.php");
+
+}
+
 
 
 function UpdateEmployee()
@@ -43,6 +54,7 @@ function uploadPicture()
 {
     $emp = new Employee();
     $fileLocation = "../../img/profile/".$_FILES['upload']['name'];
+    $a = 0;
     switch($_FILES['upload']['type'])
     {
         case "image/jpeg":$a=1;break;
@@ -68,4 +80,10 @@ function uploadPicture()
     {
         return false;
     }
+}
+
+function getAllEmployee()
+{
+    $emp = new Employee();
+    return $emp->getAllEmployee();
 }
