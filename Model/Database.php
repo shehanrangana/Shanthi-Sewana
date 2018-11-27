@@ -12,7 +12,7 @@ class Database
 
     public function __construct()
     {
-        $this->con = new mysqli("localhost:3307", 'root', "", "shanthi-sewana");
+        $this->con = new mysqli("localhost", 'root', "", "Shanthi-Sewana");
     }
 
     public function getConnection()
