@@ -33,30 +33,32 @@
 
         <!-- Here the page contents -->
         <div class="container-fluid">
+            <!-- Get selected employee's details -->
+            <?php 
+                require_once("../../Controller/AdminController.php");
+                if($result=getEmployee($_GET['id'])) {
+                $result->bind_result($emp_id, $first_name, $last_name, $address_line_1, $address_line_2, $address_line_3, $gender, $birthday, $nic, $contact_no, $rate);
+                while($result->fetch()){}
+                }
+            ?>
 
-          <!-- Breadcrumbs-->
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-              <a href="index.php">Dashboard</a>
-            </li>
-            <li class="breadcrumb-item active">Helpers</li>
-          </ol>
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.php">Dashboard</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="helper_page.php">Helpers</a>
+                </li>
+                <li class="breadcrumb-item active"><?php echo $emp_id ?></li>
+            </ol>
 
-          <!-- sdsdsdas -->
-          <?php 
-            require_once("../../Controller/AdminController.php");
-            if($result=getEmployee($_GET['id'])) {
-              $result->bind_result($emp_id, $first_name, $last_name, $address_line_1, $address_line_2, $address_line_3, $gender, $birthday, $nic, $contact_no, $rate);
-              while($result->fetch()){}
-            }
-            
-          ?>
           <div class="container emp-profile">
             <form method="post">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                            <img src="https://www.atlassian.com/dam/jcr:13a574c1-390b-4bfb-956b-6b6d114bf98c/max-rehkopf.png" alt=""/>
                         </div>
                     </div>
                     <div class="col-md-6">
