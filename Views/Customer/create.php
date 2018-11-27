@@ -1,5 +1,80 @@
-<?php 
-require('header.php')?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   	<title></title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Shanthi Sewana</title>
+
+	<!-- Bootstrap core CSS -->
+    <link rel="icon" href="img/icons/header-icon.png" type="image/x-icon">
+    <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link href="../../vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/freelancer.min.css" rel="stylesheet">
+    <link href="../../css/main.css" rel="stylesheet">
+</head>
+<body id="page-top">
+<?php session_start();
+
+
+
+?>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+	<div class="container">
+		<a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="mr-3" src="img/icons/icon-1.png" style="width:50px;height:50px">Shanthi Sewana</a>
+		<button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+			<i class="fas fa-bars"></i>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item mx-0 mx-lg-1">
+					<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="./">Home</a>
+				</li>
+				<li class="nav-item dropdown">
+        			<a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         			 For Employers
+        			</a>
+        				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+         					<a class="dropdown-item" href="./register.php">Post a job</a>
+          					<a class="dropdown-item" href="./Views/Customer/index.php">Find a candidate</a>
+          
+        				</div>
+     	 		</li>
+				<li class="nav-item dropdown">
+        			<a class="nav-link dropdown-hover py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         			 For helpers</a>
+        			<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          				<a class="dropdown-item" href="#">Domestic helper jobs</a>
+          				<a class="dropdown-item" href="./register.php">Submit your profile</a>
+          
+        			</div>
+	  			</li>
+	  			<li class="nav-item mx-0 mx-lg-1">
+					
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary mt-3 mb-1 py-1 px-0 px-lg-3" data-toggle="modal" data-target="#exampleModal">Login
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+</body>
 
     <div class="container">
         <a href="index.php" class="btn btn-light mb-3"><< Go Back</a>
@@ -155,6 +230,5 @@ require('header.php')?>
 
 	<!-- Custom scripts for this template -->
 	<script src="./js/freelancer.min.js"></script>
-
   </body>
-</html>
+ </html>

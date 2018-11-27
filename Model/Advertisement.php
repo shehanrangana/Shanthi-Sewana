@@ -23,11 +23,12 @@ class Advertisement
         $this->con = (new Database())->getConnection();
     }
 
+//add a new Advertisement
 
- public function AddAdvertisement()
+ public function addAdvertisement()
     {
     try{
-        $sql = "INSERT INTO advertisement(title, region, j_type, position, skills, telephone,email,address1,address2,city,start_date,end_date,description) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "insert into advertisement(title, region, j_type, position, skills, telephone,email,address1,address2,city,start_date,end_date,description) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
         $stmt = $this->con->prepare($sql);
 
@@ -37,6 +38,7 @@ class Advertisement
         
         if($stmt->execute())
         {
+    
             header("Location: create.php?status=created");
             exit();
         }
@@ -45,14 +47,73 @@ class Advertisement
             header("Location: create.php?status=fail_create");
             return $stmt->error;
             exit();
-            }
         }
-        catch (Exception $e) {
+      }
+        catch (Exception $e) 
+        {
         echo "Error " . $e->getMessage();
         exit();
-        
-        
+        }
+
+    }
+
+
+    // public function updateAdvertisement()
+    // {
+    //     try {
+    //        $sql="update advertisement set title=?,region=? ,j_type=?,position=?,skills=?,telephone=?,email=?,address1=?,address2=?,city=?start_date=?,end_date=? description=? ";
+    //        $stmt->bind_param("",$this->title,$this->region,
+    //         $this->j_type1,$this->position,$this->skills,$this->telephone,$this->email,$this->address1
+    //         ,$this->address2,$this->address2,$this->city,$this->start_date,$this->end_date,$emp_id);
+    //     if($stmt->execute() &&  
+            
+    //     } catch {
+            
+    //     }
+
+    // }
+//delete an existing Advertisement
+
+    public function deleteAdvertisement()
+    {
+
+        try{
+            $sql="DELETE * FROM advertisement WHERE emp_id=?";
+            $stmt = $this->con->prepare($sql);
+            $stmt->bind_param("s", $empId);
+            $stmt->execute();    
+
+        }
+    catch{
+            echo "Error " . $e->getMessage();
+            exit();
       }
+
+    }
+    public function getAdvertisement($empId)
+    {
+
+        try {
+            $sql = "SELECT * FROM advertisement WHERE emp_id = ?";
+            $stmt = $this->con->prepare($sql);
+            $stmt->bind_param("s", $empId);
+            $stmt->execute();    
+        }
+        catch (Exception $e) {
+            echo "Error " . $e->getMessage();
+            exit();
+        }
+        if($stmt->execute() && $stmt->affected_rows>0)
+        {
+            return true;
+        }
+        else
+        {
+            return $stmt->error;
+        }
+   }
+
+?>
 
     }
 

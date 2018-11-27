@@ -17,23 +17,6 @@
 </head>
 
 <body>
-<?php 
-// Include database connection
-require_once("../../Model/Database.php");
-require_once("../../Model/Advertisement.php");
-
-try {
-    // Create sql statment
-    $advertisement= new Advertisement();
-    $result = $advertisement->get;
-
-} catch (Exception $e) {
-    echo "Error " . $e->getMessage();
-    exit();
-}
-
-?>
-
     <div class="container">
         <?php if (isset($_GET['status']) && $_GET['status'] == "deleted") : ?>
         <div class="alert alert-success" role="alert">
