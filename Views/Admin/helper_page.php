@@ -68,7 +68,9 @@
                             <td> ".$gender."</td>
                             <td> ".$nic."</td>
                             <td> ".$contact_no."</td>
-                            <td><button type='button' class='btn btn-outline-info btn-sm'>View Profile</button></td>
+                            <td>
+                            <a href='employee_details.php?id=$emp_id' class='btn btn-sm btn-light'>View Profile</a>
+                            </td>
                             </tr>";
                     }
                 }
