@@ -21,37 +21,41 @@ class Advertisement
    public function __construct()
     {
         $this->con = (new Database())->getConnection();
+
+
     }
 
 //add a new Advertisement
 
  public function addAdvertisement()
+
     {
+
     try{
-        $sql = "insert into advertisement(title, region, j_type, position, skills, telephone,email,address1,address2,city,start_date,end_date,description) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
+        $sql = "INSERT INTO  advertisement(title, region, j_type, position, skills, telephone,email,address1,address2,city,start_date,end_date,description) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?);";
 
         $stmt = $this->con->prepare($sql);
 
         $stmt->bind_param("sssssssssssss",$this->title,$this->region,
             $this->j_type,$this->position,$this->skills,$this->telephone,$this->email,$this->address1
             ,$this->address2,$this->city,$this->start_date,$this->end_date,$this->description);
-        
+
+
         if($stmt->execute())
         {
-            return true;
-            // header("Location: create.php?status=created");
-            // exit();
+
+           return true;
         }
         else
         {
             return $stmt->error;
-            // header("Location: create.php?status=fail_create");
-            // return $stmt->error;
-            // exit();
         }
       }
+
     catch (Exception $e) {
         echo "Error " . $e->getMessage();
+
         exit();
        }
 

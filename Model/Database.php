@@ -15,9 +15,11 @@ class Database
         $this->con = new mysqli("localhost", 'root', "", "Shanthi-Sewana");
     }
 
+
     public function getConnection()
     {
-        return $this->con;
+
+    	return $this->con;
     }
 
 }
