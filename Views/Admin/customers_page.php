@@ -38,18 +38,19 @@
                 <li class="breadcrumb-item">
                     <a href="index.php">Dashboard</a>
                 </li>
-                <li class="breadcrumb-item active">Helpers</li>
+                <li class="breadcrumb-item active">Customers</li>
             </ol>
 
-            <!-- Employee table -->
+            <!-- Customers table -->
             <input id="myInput" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             <br>
             <table class="table table-sm">
             <thead>
                 <tr>
-                <th scope="col">Employee ID</th>
                 <th scope="col">Name</th>
-                <th scope="col">Gender</th>
+                <th scope="col">Address Line 1</th>
+                <th scope="col">Address Line 2</th>
+                <th scope="col">Address Line 3</th>
                 <th scope="col">NIC</th>
                 <th scope="col">Contact No</th>
                 <th scope="col">Action</th>
@@ -59,17 +60,19 @@
             <?php
                 require_once("../../Controller/AdminController.php");
                 // output data of each row
-                if($row=getAllEmployee()) {
-                    $row->bind_result($emp_id, $first_name, $last_name, $address_line_1, $address_line_2, $address_line_3, $gender, $birthday, $nic, $contact_no, $rate);
+                // customer_id,first_name,last_name,address_line_1,address_line_2,address_line_3,nic,contact_no,email from customer;
+                if($row=getAllCustomer()) {
+                    $row->bind_result($customer_id, $first_name, $last_name, $address_line_1, $address_line_2, $address_line_3, $nic, $contact_no);
                     while($row->fetch()){
                     echo    "<tr>
-                            <td scope='row'>".$emp_id."</td>
-                            <td>" . $first_name." ".$last_name."</td>
-                            <td> ".$gender."</td>
+                            <td scope='row'>". $first_name." ".$last_name."</td>
+                            <td>".$address_line_1."</td>
+                            <td> ".$address_line_2."</td>
+                            <td> ".$address_line_3."</td>
                             <td> ".$nic."</td>
                             <td> ".$contact_no."</td>
                             <td>
-                                <a href='employee_details.php?id=$emp_id' class='btn btn-sm btn-light'>View Profile</a>
+                                <a href='customer_timeline.php?id=$customer_id' class='btn btn-sm btn-light'>Timeline</a>
                             </td>
                             </tr>";
                     }
@@ -78,6 +81,7 @@
             ?>
             </tbody>
             </table>
+            
 
         </div>
         <!-- /.container-fluid -->

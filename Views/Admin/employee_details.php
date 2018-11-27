@@ -37,7 +37,7 @@
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="#">Dashboard</a>
+              <a href="index.php">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">Helpers</li>
           </ol>
@@ -45,9 +45,8 @@
           <!-- sdsdsdas -->
           <?php 
             require_once("../../Controller/AdminController.php");
-            // $emp_id = $_GET['id'];
-            if($result=getEmployeeDetails($_GET['id'])) {
-              $result->bind_result($emp_id, $first_name, $last_name, $address_line_1, $address_line_2, $address_line_3, $gender, $nic, $contact_no, $rate, $type, $description, $propic);
+            if($result=getEmployee($_GET['id'])) {
+              $result->bind_result($emp_id, $first_name, $last_name, $address_line_1, $address_line_2, $address_line_3, $gender, $birthday, $nic, $contact_no, $rate);
               while($result->fetch()){}
             }
             
@@ -65,10 +64,8 @@
                                     <h5>
                                         <?php echo $first_name.' '.$last_name ?>
                                     </h5>
-                                    <h6>
-                                        Web Developer and Designer
-                                    </h6>
-                                    <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                                    <h6><?php echo $contact_no ?></h6>
+                                    <p class="proile-rating">RATE : <span><?php echo $rate ?></span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
@@ -86,16 +83,10 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <p>WORK LINK</p>
-                            <a href="">Website Link</a><br/>
-                            <a href="">Bootsnipp Profile</a><br/>
-                            <a href="">Bootply Profile</a>
-                            <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/>
+                            <p>ADDRESS</p>
+                            <h6><?php echo $address_line_1 ?></h6>
+                            <h6><?php echo $address_line_2 ?></h6>
+                            <h6><?php echo $address_line_3 ?></h6>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -108,30 +99,6 @@
                                             <div class="col-md-6">
                                                 <p><?php echo $emp_id ?></p[]>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Address Line 1</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p><?php echo $address_line_1 ?></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Address Line 2</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p><?php echo $address_line_2 ?></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Address Line 3</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p><?php echo $address_line_3 ?></p>
-                                            </div>
                                         </div><div class="row">
                                             <div class="col-md-6">
                                                 <label>Gender</label>
@@ -141,31 +108,17 @@
                                             </div>
                                         </div><div class="row">
                                             <div class="col-md-6">
+                                                <label>Birthday</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><?php echo $birthday ?></p>
+                                            </div>
+                                        </div><div class="row">
+                                            <div class="col-md-6">
                                                 <label>NIC</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><?php echo $nic ?></p>
-                                            </div>
-                                        </div><div class="row">
-                                            <div class="col-md-6">
-                                                <label>Contact Number</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p><?php echo $contact_no ?></p>
-                                            </div>
-                                        </div><div class="row">
-                                            <div class="col-md-6">
-                                                <label>Type</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p><?php echo $type ?></p>
-                                            </div>
-                                        </div><div class="row">
-                                            <div class="col-md-6">
-                                                <label>Description</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p><?php echo $description ?></p>
                                             </div>
                                         </div>
                             </div>
@@ -183,39 +136,18 @@
                                                 <label>Hourly Rate</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>10$/hr</p>
+                                                <p>Rs.100/hr</p>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Total Projects</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>230</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>English Level</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
+                            
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label>Availability</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>6 months</p>
+                                                <p>Yes</p>
                                             </div>
                                         </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Your Bio</label><br/>
-                                        <p>Your detail description</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
