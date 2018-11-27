@@ -74,30 +74,21 @@
 		</div>
 	</div>
 </nav>
+<!-- End of navigation bar  -->
+
 </body>
 
     <div class="container">
         <a href="index.php" class="btn btn-light mb-3"><< Go Back</a>
         
-        <?php if (isset($_GET['status']) && $_GET['status'] == "created") : ?>
-        <div class="alert alert-success" role="alert">
-            <strong>Created</strong>
-        </div>
-
-        <?php endif ?>
-        <?php if (isset($_GET['status']) && $_GET['status'] == "fail_create") : ?>
-        <div class="alert alert-danger" role="alert">
-            <strong>Fail Create</strong>
-        </div>
-        <?php endif ?>
-
-        <!-- Create Form -->
+       <!-- Create Form -->
         <div class="card border-danger">
             <div class="card-header bg-danger text-white">
                 <strong><i class="fa fa-plus"></i> Information about your Job Offer</strong>
             </div>
             <div class="card-body">
-                <form action="index.php" method="post">
+
+                <form action="create.php" method="post" >
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="title" class="col-form-label"><b>Job Title</b></label>
@@ -161,16 +152,29 @@
 
                     <div class="form-group"> 
                     	<!-- <label for="contact" class="col-form-label"><b>Contact Details</b></label> -->
+                    	<!-- <script type="text/javascript">
+           	
+                    	function phonenumber(telephone)
+						{
+  							var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  							if(!inputtxt.value.match(phoneno))
+     						{
+	   							alert("Not a valid Phone Number");
+	   							return false;
+     						}
+						}
+                    	</script> -->
 						
 						<div class="form-row">
+
 							<div class="form-group col-md-4">
 								<label for="telephone" class="col-form-label"><b>Telephone Number</b></label>
-								<input type="text" class="form-control" id="telephone" name="telephone" placeholder="Enter your Residential number" required>
+								<input type="text" class="form-control" id="telephone" name="telephone" placeholder="Enter your telephone number" require>
 							</div>
 
 							<div class="form-group col-md-4">
 								<label for="email" class="col-form-label"><b>E-mail</b></label>
-								<input type="text" class="form-control" id="email" name="email" placeholder="Enter your E-mail address" required>
+								<input type="text" class="form-control" id="email" name="email" placeholder="Enter your E-mail address"  required>
 							</div>
 
 						</div>
@@ -208,13 +212,14 @@
                         <label for="note" class="col-form-label"><b>Job Description</b></label>
                         <textarea name="description" id="" rows="5" class="form-control" placeholder="Please give some information about the job position and about your family."></textarea>
                     </div>
-                    <button type="submit" class="btn btn-success"><i class="fa fa-check-circle"></i> Save</button>
+                    <button type="submit" name="submit" va class="btn btn-success"><i class="fa fa-check-circle"></i>Save</button>
                 </form>
             </div>
         </div>
         <!-- End create form -->
         <br>
     </div><!-- /.container -->
+
 
     <!-- Bootstrap core JavaScript -->
 	<script src="./vendor/jquery/jquery.min.js"></script>
@@ -232,3 +237,21 @@
 	<script src="./js/freelancer.min.js"></script>
   </body>
  </html>
+
+
+
+<?php
+
+require_once("../../Controller/AdvertisementController.php");
+
+if(isset($_POST['submit']))
+{
+   echo "<script type='text/javascript'>alert('Form successfuly submitted')</script>";
+
+}
+else {
+	   echo "<script type='text/javascript'>alert('Form not submitted')</script>";
+
+}
+
+?>
