@@ -38,22 +38,22 @@ class Advertisement
         
         if($stmt->execute())
         {
-    
-            header("Location: create.php?status=created");
-            exit();
+            return true;
+            // header("Location: create.php?status=created");
+            // exit();
         }
         else
         {
-            header("Location: create.php?status=fail_create");
             return $stmt->error;
-            exit();
+            // header("Location: create.php?status=fail_create");
+            // return $stmt->error;
+            // exit();
         }
       }
-        catch (Exception $e) 
-        {
+    catch (Exception $e) {
         echo "Error " . $e->getMessage();
         exit();
-        }
+       }
 
     }
 
@@ -72,24 +72,29 @@ class Advertisement
     //     }
 
     // }
+
+
 //delete an existing Advertisement
 
     public function deleteAdvertisement()
     {
 
         try{
-            $sql="DELETE * FROM advertisement WHERE emp_id=?";
+            $sql="DELETE FROM advertisement WHERE emp_id=?";
             $stmt = $this->con->prepare($sql);
             $stmt->bind_param("s", $empId);
             $stmt->execute();    
 
         }
-    catch{
+    catch(Exception $e){
             echo "Error " . $e->getMessage();
             exit();
       }
 
     }
+
+
+
     public function getAdvertisement($empId)
     {
 
@@ -112,10 +117,6 @@ class Advertisement
             return $stmt->error;
         }
    }
-
-?>
-
-    }
 
 }
 
