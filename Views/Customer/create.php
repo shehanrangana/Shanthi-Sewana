@@ -88,7 +88,8 @@
             </div>
             <div class="card-body">
 
-                <form action="create.php" method="post" >
+                <form action="create.php" method="POST" >
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="title" class="col-form-label"><b>Job Title</b></label>
@@ -174,7 +175,7 @@
 
 							<div class="form-group col-md-4">
 								<label for="email" class="col-form-label"><b>E-mail</b></label>
-								<input type="text" class="form-control" id="email" name="email" placeholder="Enter your E-mail address"  required>
+								<input type="email" class="form-control" id="email" name="email" placeholder="Enter your E-mail address"  required>
 							</div>
 
 						</div>
@@ -245,13 +246,17 @@
 require_once("../../Controller/AdvertisementController.php");
 
 if(isset($_POST['submit']))
-{
-   echo "<script type='text/javascript'>alert('Form successfuly submitted')</script>";
 
-}
-else {
+	$result = addAdvertisement();
+    if($result)
+
+    {
+   		echo "<script type='text/javascript'>alert('Form successfuly submitted')</script>";
+
+	}
+	else {
 	   echo "<script type='text/javascript'>alert('Form not submitted')</script>";
 
-}
+	}
 
 ?>
