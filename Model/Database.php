@@ -8,11 +8,11 @@
 
 class Database
 {
-    private $con;
+	private $con;
 
     public function __construct()
     {
-        $this->con = new mysqli("localhost", 'root', "", "shanthi-sewana");
+        $this->con = new mysqli("localhost:3307", 'root', "", "shanthi-sewana");
     }
 
     public function getConnection()

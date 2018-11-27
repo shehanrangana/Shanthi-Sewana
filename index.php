@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 	<meta charset="utf-8">
@@ -50,7 +49,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="./register.php">Post a job</a>
-          <a class="dropdown-item" href="#">Find a candidate</a>
+          <a class="dropdown-item" href="./Views/Customer/index.php">Find a candidate</a>
           
         </div>
       </li>
@@ -163,7 +162,7 @@
 <!-- Contact Section -->
 <section id="contact">
 	<div class="container">
-		<h2 class="text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+		<h2 class="text-center text-uppercase text-secondary mb-0">Search and Find a Job</h2>
 		<hr class="star-dark mb-5">
 		<div class="row">
 			<div class="col-lg-8 mx-auto">
