@@ -114,7 +114,7 @@ class Employee
     public function getAllEmployee()
     {
         $sql = "select emp_id,first_name,last_name,address_line_1,address_line_2,address_line_3,gender,birthday,nic,contact_no,rate,type,
-                description from employee;";
+                description, email from employee;";
 
         $stmt = $this->con->prepare($sql);
         if($stmt->execute())
