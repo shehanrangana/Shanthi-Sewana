@@ -7,3 +7,9 @@ function getEmployee()
     $emp = new Admin();
     return $emp->getAllEmployee();
 }
+
+function getEmployeeDetails($id)
+{
+    $emp = new Admin();
+    return $emp->getEmployee($id);
+}

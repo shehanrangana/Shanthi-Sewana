@@ -28,7 +28,7 @@ class Admin
     public function getEmployee($id)
     {
         $sql = "select emp_id,first_name,last_name,address_line_1,address_line_2,address_line_3,gender,nic,contact_no,rate,type,
-                description ,propic from employee where emp_id=?;";
+        description,propic from employee where emp_id=?;";
 
         $stmt = $this->con->prepare($sql);
         $stmt->bind_param("s",$id);
