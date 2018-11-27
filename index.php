@@ -23,6 +23,7 @@
 	<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
 	<!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/dialogbox.css">
 	<link href="css/freelancer.min.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
 
@@ -30,7 +31,9 @@
 </head>
 
 <body id="page-top">
-<?php session_start();?>
+<?php session_start();
+require_once("Controller/EmployeeController.php");
+?>
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
 	<div class="container">
@@ -68,9 +71,15 @@
 	  <li class="nav-item mx-0 mx-lg-1">
 					
 					<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary mt-3 mb-1 py-1 px-0 px-lg-3" data-toggle="modal" data-target="#exampleModal">
+          <?php
+          if(!isset($_SESSION["id"]))
+              {
+                  echo "<button type='button' class='btn btn-primary mt-3 mb-1 py-1 px-0 px-lg-3' data-toggle='modal' data-target='#exampleModal'>
   Login
-</button>
+</button>";
+              }
+              ?>
+
 
 
 				</li>
@@ -127,14 +136,144 @@
 <!-- Portfolio Grid Section -->
 <section class="portfolio" id="portfolio">
 	<div class="container">
-		<hr class="star-dark mb-5">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="job-box">
-
-				</div>
+        <h1 align="center">Helpers</h1>
+        <hr class="star-dark mb-5">
+        <?php
+           $result = getAllEmployee();
+           if($result)
+               {
+                   //select emp_id,first_name,last_name,address_line_1,address_line_2,address_line_3,gender,birthday,nic,contact_no,rate,type,
+                //description from employee;";
+                   $a = 0;
+                   $result->bind_result($id,$fName,$lName,$address1,$address2,$address3,$gender,$nic,$contact,$rate,$type,$description,$location);
+                   while($result->fetch())
+                   {
+                       if($a==0)
+                           {
+                               echo "<div class='row'>"
+			                            
+                                            ;
+                               $a = $a+1;
+                           }
+                           else if($a<=3)
+                               {
+                                   $a = $a +1;
+                                   $pathArray = explode("/",$location);
+                                   $imgPath = $pathArray[count($pathArray)-1];
+                                   echo "<div class='col-md-4'><div class='card' style='border-radius: 17px'>
+                        <img class='card-img-top' src="."./img/profile/$imgPath"." alt='Card image cap'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>$fName"." "."$lName"."</h5>
+                            <p class='card-title'><b>$type</b></p>
+                            <p class='card-title'><b>"."Rs."."$rate</b></p>
+                            <p class='card-text'>$description</p>
+                        </div>
+                        <div class='card-footer'>
+                            <small class='text-muted'>Last updated 3 mins ago</small>
+                        </div>
+                    </div></div>";
+                               }
+                               else
+                                   {
+                                       $a = 0;
+                                       echo "</div>";
+                                   }
+                   }
+               }
+               ?>
+        <!--<div class="row">
+			<div class="col-md-12">
+                <div class="card-deck">
+                    <div class="card">
+                        <img class="card-img-top" src="./img/person1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./img/person1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./img/person1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-deck">
+                    <div class="card">
+                        <img class="card-img-top" src="./img/person1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./img/person1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./img/person1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./img/person1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./img/person1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div>
+                </div>
+                </div>
 			</div>
-		</div>
+		</div>-->
 	</div>
 </section>
 
@@ -418,6 +557,7 @@
 
 <!-- Custom scripts for this template -->
 <script src="./js/freelancer.min.js"></script>
+<script src="./js/dialogbox.js"></script>
 
 </body>
 
