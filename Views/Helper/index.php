@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../../css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.css" />
+    <link href="../../css/sweetalert2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
@@ -399,6 +400,8 @@ if($result!=null)
 <script src="../../js/jquery.min.js"></script>
 <script src="../../js/popper.min.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/dialogbox.js"></script>
+<script src="../../js/sweetalert2.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.js"></script>
 <script>
     $('.port-item').click(function(){
@@ -419,12 +422,23 @@ if(isset($_POST["submit"]))
     $result = UpdateEmployee();
     if($result)
     {
-        echo "<script type='text/javascript'>alert('Profile updated successfully');window.location=window.location;</script>";
+        //echo "<script type='text/javascript'>alert('Profile updated successfully');window.location=window.location;</script>";
+        echo "<script type='text/javascript'>swal({
+  title: 'Profile updated successfully',
+  text: '',
+  type: 'success',
+  confirmButtonText: 'Ok'
+})</script>";
     }
     else
     {
-        echo "<script type='text/javascript'>alert('Unsuccess')</script>";
-
+        //echo "<script type='text/javascript'>alert('Unsuccess')</script>";
+        echo "<script type='text/javascript'>swal({
+  title: 'Something went wrong',
+  text: '',
+  type: 'error',
+  confirmButtonText: 'Ok'
+})</script>";
     }
 }
 
@@ -433,12 +447,21 @@ if(isset($_POST["upload"]))
     $result = uploadPicture();
     if($result)
     {
-        echo "<script type='text/javascript'>alert('Profile picture uploaded successfully');window.location = window.location</script>";
+        echo "<script type='text/javascript'>swal({
+  title: 'Profile photo uploaded successfully',
+  text: '',
+  type: 'success',
+  confirmButtonText: 'Ok'
+})</script>";
     }
     else
     {
-        echo "<script type='text/javascript'>alert('Unsuccess')</script>";
-
+        echo "<script type='text/javascript'>swal({
+  title: 'Profile photo updated went wrong',
+  text: '',
+  type: 'error,
+  confirmButtonText: 'Ok'
+})</script>";
     }
 }
 ?>
