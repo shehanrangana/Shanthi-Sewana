@@ -11,8 +11,9 @@
 	<title>Shanthi Sewana</title>
 
 	<!-- Bootstrap core CSS -->
-    <link rel="icon" href="img/icons/header-icon.png" type="image/x-icon">
+    <link rel="icon" href="../../img/icons/header-icon.png" type="image/x-icon">
     <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
 
     <!-- Custom fonts for this template -->
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -93,7 +94,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="title" class="col-form-label"><b>Job Title</b></label>
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Job Title - e.g Western family looking for help" required>
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Keep it short!   e.g Family looking for help" required>
                         </div>
 
                         <div class="form-group col-md-6">
@@ -141,36 +142,27 @@
    						<div class="form-group col-md-4">
                         	<label for="skills" class="col-form-label"><b>Skills</b></label>
                         	<select name="skills" class="form-control" id=skills>
-  								<option value="type">What are the main skills needed?</option>
-  								<option value="1">USA</option>
-  								<option value="2">Germany</option>
-								<option value="3">France</option>
-  								<option value="4">Poland</option>
-  								<option value="5">Japan</option>
+  								<option value="type">What are the main skill needed?</option>
+  								<option value="1">Baby Care</option>
+  								<option value="2">Child Care</option>
+								<option value="3">Cooking</option>
+  								<option value="4">Driver</option>
+  								<option value="5">Elder Care</option>
+  								<option value="6">Gardening</option>
+  								<option value="7">House Keeping</option>
+  								<option value="8">Pet Care</option>
 							</select>
 						</div>
                     </div>
 
                     <div class="form-group"> 
                     	<!-- <label for="contact" class="col-form-label"><b>Contact Details</b></label> -->
-                    	<!-- <script type="text/javascript">
-           	
-                    	function phonenumber(telephone)
-						{
-  							var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-  							if(!inputtxt.value.match(phoneno))
-     						{
-	   							alert("Not a valid Phone Number");
-	   							return false;
-     						}
-						}
-                    	</script> -->
-						
+                    	
 						<div class="form-row">
 
 							<div class="form-group col-md-4">
 								<label for="telephone" class="col-form-label"><b>Telephone Number</b></label>
-								<input type="text" class="form-control" id="telephone" name="telephone" placeholder="Enter your telephone number" require>
+								<input type="text" class="form-control" id="telephone" name="telephone" placeholder="Enter  telephone number eg:071-1234567" pattern="[0-9]{3}[-]{1}[0-9]{7}" required>
 							</div>
 
 							<div class="form-group col-md-4">
